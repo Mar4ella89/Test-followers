@@ -11,7 +11,7 @@
 
 export const App = () => {
   return (
-  <>HI</>
+  <>HI My FOLLOWERS</>
     // <Suspense>
     //   <Navbar />
     //   <Routes>
