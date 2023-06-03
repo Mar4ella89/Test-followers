@@ -18,7 +18,7 @@
 html,
 body {
   height: 100%;
-  min-width: 320px;
+  min-width: 380px;
 }
 
 body {
@@ -93,8 +93,3 @@ code {
     monospace;
 }
 
-.container {
-    max-width: 1248px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
