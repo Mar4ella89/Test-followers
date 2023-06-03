@@ -1,4 +1,5 @@
 import defaultImage from '../../images/Hansel.png';
+// import defaultImage from '../../images/213.jpg';
 
 import css from './FollowersPage.module.css';
 
