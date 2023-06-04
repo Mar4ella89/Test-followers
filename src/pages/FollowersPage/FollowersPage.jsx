@@ -1,3 +1,7 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+
+import { fetchAllUsers } from 'redux/users/user-operations';
 import Container from 'components/Container/Container';
 
 import GoitIcon from 'images/icons/GoitIcon';
@@ -8,6 +12,14 @@ import defaultImage from '../../images/Hansel.png';
 import css from './FollowersPage.module.css';
 
 const FollowersPage = () => {
+  const users = useSelector(({ users }) => users.items);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAllUsers());
+  }, [dispatch]);
+
   return (
     <Container>
     <section className={css.section}>
