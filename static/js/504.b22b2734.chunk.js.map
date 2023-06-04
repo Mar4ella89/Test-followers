@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/504.b22b2734.chunk.js","mappings":"wIAIA,UAJmB,WACjB,OAAO,4CACR,C","sources":["pages/TweetsPage/TweetsPage.jsx"],"sourcesContent":["const TweetsPage = () => {\n  return <>TweetsPage</>;\n};\n\nexport default TweetsPage;\n"],"names":[],"sourceRoot":""}
