@@ -13,6 +13,7 @@ import css from './FollowersPage.module.css';
 
 const FollowersPage = () => {
   const users = useSelector(({ users }) => users.items);
+  console.log(users);
 
   const dispatch = useDispatch();
 
@@ -24,77 +25,27 @@ const FollowersPage = () => {
     <Container>
     <section className={css.section}>
       <ul className={css.list}>
-      <li className={css.item}>
+      {users.map(({id,name,avatar,tweets,followers})=>(<li key={id} className={css.item}>
         <GoitIcon color={'#FFFFFF'} className={css.logo}/>
         <div className={css.middleLine}></div>
 
         <div className={css.avatarContainer}>
           <div className={css.avatarBack}>
             <img
-              src={defaultImage}
-              alt=""
-              //   alt={title}
+              src={avatar || defaultImage}
+              alt={name}
               loading="lazy"
                 className={css.image}
-              //   src={imageError ? defaultImage : imgUrl}
-              //   onError={handleImageError}
             />
           </div>
         </div>
-        <p className={css.userTitle}>Bob Dylan</p>
+        <p className={css.userTitle}>{name}</p>
 
-        <p className={css.text}>777 tweets</p>
-        <p className={css.text}>100,501 Followers</p>
+        <p className={css.text}>{tweets} tweets</p>
+        <p className={css.text}>{followers.toLocaleString('en-US',{ useGrouping: true, minimumFractionDigits: 0 })} Followers</p>
         <button type="button" className={css.button}>Following</button>
-      </li>
-
-      <li className={css.item}>
-        <GoitIcon color={'#FFFFFF'} className={css.logo}/>
-        <div className={css.middleLine}></div>
-
-        <div className={css.avatarContainer}>
-          <div className={css.avatarBack}>
-            <img
-              src={defaultImage}
-              alt=""
-              //   alt={title}
-              loading="lazy"
-                className={css.image}
-              //   src={imageError ? defaultImage : imgUrl}
-              //   onError={handleImageError}
-            />
-          </div>
-        </div>
-        <p className={css.userTitle}>Bob Dylan</p>
-
-        <p className={css.text}>777 tweets</p>
-        <p className={css.text}>100,501 Followers</p>
-        <button type="button" className={css.button}>Following</button>
-      </li>
-
-      <li className={css.item}>
-        <GoitIcon color={'#FFFFFF'} className={css.logo}/>
-        <div className={css.middleLine}></div>
-
-        <div className={css.avatarContainer}>
-          <div className={css.avatarBack}>
-            <img
-              src={defaultImage}
-              alt=""
-              //   alt={title}
-              loading="lazy"
-                className={css.image}
-              //   src={imageError ? defaultImage : imgUrl}
-              //   onError={handleImageError}
-            />
-          </div>
-        </div>
-        <p className={css.userTitle}>Bob Dylan</p>
-
-        <p className={css.text}>777 tweets</p>
-        <p className={css.text}>100,501 Followers</p>
-        <button type="button" className={css.button}>Following</button>
-      </li>
+      </li>))}
+      
     </ul>
     </section>
     </Container>
