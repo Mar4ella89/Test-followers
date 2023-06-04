@@ -4,7 +4,8 @@ import css from './Navbar.module.css';
 
 const Navbar = () => {
   return (
-    <div className={css.navList}>
+    <div className={css.wrapper}>
+      <div className={css.navList}>
       <NavLink to="/" className={css.navLink}>
         Home
       </NavLink>
@@ -15,6 +16,8 @@ const Navbar = () => {
         Followers
       </NavLink>
     </div>
+    </div>
+    
   );
 };
 
