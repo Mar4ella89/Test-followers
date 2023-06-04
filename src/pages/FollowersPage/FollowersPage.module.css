@@ -5,7 +5,7 @@
 .list {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 16px;
 }
 
 .logo {
@@ -17,7 +17,7 @@
 .item {
   position: relative;
   padding-top: 265px;
-  width: 380px;
+  width: 320px;
   height: 460px;
   background: url('../../images/picture2.png') no-repeat,
     linear-gradient(115deg, #471ca9 -1%, #5736a3 54%, #4b2a99 79%);
@@ -25,31 +25,54 @@
   border-radius: 20px;
   background-position-x: center;
   background-position-y: 10%;
+
+  @media screen and (min-width: 768px) {
+    width: 360px;
+}
+@media screen and (min-width: 1279px) {
+    width: 380px;
+    
+  }
+
 }
 
 .middleLine {
   position: absolute;
-  width: 380px;
+  width: 320px;
   height: 8px;
-  top: 214px;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   background: #ebd8ff;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06), inset 0px -1.7px 3px #ae7be3,
     inset 0px 3px 2.5px #fbf8ff;
+
+    @media screen and (min-width: 768px) {
+        width: 360px;
+    }
+
+    @media screen and (min-width: 1279px) {
+        width: 380px;
+        
+      }
 }
 
 .avatarContainer {
   position: absolute;
   width: 80px;
   height: 80px;
-  left: 150px;
-  top: 178px;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   background: #ebd8ff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06), inset 0px -2px 4px #ae7be3,
     inset 0px 4px 3px #fbf8ff;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 85px;
+
+ 
 }
 
 .avatarBack {
