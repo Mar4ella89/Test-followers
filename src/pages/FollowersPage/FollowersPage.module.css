@@ -1,11 +1,17 @@
+.section {
+  padding-top: 15px;
+}
+
 .list {
-    
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .logo {
-    position: absolute;
-left: 20px;
-top: 20px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
 }
 
 .item {
@@ -22,7 +28,7 @@ top: 20px;
 }
 
 .middleLine {
-    position: absolute;
+  position: absolute;
   width: 380px;
   height: 8px;
   top: 214px;
@@ -95,9 +101,9 @@ top: 20px;
   margin-left: auto;
   margin-right: auto;
 
-font-weight: 600;
-font-size: 18px;
-line-height: 1.22;
-text-transform: uppercase;
-color: #373737;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.22;
+  text-transform: uppercase;
+  color: #373737;
 }
