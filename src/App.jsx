@@ -11,7 +11,7 @@ const FollowersPage = lazy(() => import('./pages/FollowersPage/FollowersPage'));
 
 export const App = () => {
   return (
-    // <>HI My FOLLOWERS</>
+    
     <Suspense>
       <Navbar />
       <Routes>
