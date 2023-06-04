@@ -8,4 +8,9 @@ const usersInstance = axios.create({
     const { data } = await usersInstance.get('/');
     return data;
   };
+
+  export const addFollower = async id => {
+    const { data } = await usersInstance.patch(`/contacts/${id}`);
+    return data;
+  };
   
