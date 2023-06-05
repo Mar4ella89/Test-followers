@@ -1,12 +1,18 @@
 .section {
   padding-top: 15px;
-padding-bottom: 15px;
+  padding-bottom: 15px;
 }
 
 .list {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  @media screen and (min-width: 1279px) {
+    gap: 54px;
+  }
 }
 
 .logo {
@@ -29,12 +35,10 @@ padding-bottom: 15px;
 
   @media screen and (min-width: 768px) {
     width: 360px;
-}
-@media screen and (min-width: 1279px) {
-    width: 380px;
-    
   }
-
+  @media screen and (min-width: 1279px) {
+    width: 380px;
+  }
 }
 
 .middleLine {
@@ -49,14 +53,13 @@ padding-bottom: 15px;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06), inset 0px -1.7px 3px #ae7be3,
     inset 0px 3px 2.5px #fbf8ff;
 
-    @media screen and (min-width: 768px) {
-        width: 360px;
-    }
+  @media screen and (min-width: 768px) {
+    width: 360px;
+  }
 
-    @media screen and (min-width: 1279px) {
-        width: 380px;
-        
-      }
+  @media screen and (min-width: 1279px) {
+    width: 380px;
+  }
 }
 
 .avatarContainer {
@@ -72,7 +75,6 @@ padding-bottom: 15px;
     inset 0px 4px 3px #fbf8ff;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 85px;
- 
 }
 
 .avatarBack {
@@ -110,7 +112,7 @@ padding-bottom: 15px;
   margin-top: 15px;
 }
 
-.button {
+.buttonFollow {
   display: block;
   padding: 14px 28px;
   width: 195px;
@@ -130,39 +132,41 @@ padding-bottom: 15px;
   text-transform: uppercase;
   color: #373737;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.buttonFollow:hover,
+.buttonFollow:focus {
+  background-color: #dbc0f7;
+}
+
+.button,
+.buttonBack {
+  display: block;
+  padding: 14px 14px;
+  
+  height: 50px;
+
+  background-color: #471ca9;
+  box-shadow: 0px 3.4px 3.4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  text-transform: uppercase;
+  color: #ffffff;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.buttonBack {
+  margin-left: 0;
 }
 
 .button:hover,
-.button:focus {
-    background-color: #dbc0f7;
-}
-
-.loadMoreBtn {
-    display: block;
-    padding: 14px 28px;
-    width: 174px;
-    height: 50px;
-
-    background-color: #471ca9;
-    box-shadow: 0px 3.4px 3.4px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-
-    margin-top: 25px;
-    margin-left: auto;
-    margin-right: auto;
-
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.22;
-    text-transform: uppercase;
-    color: #ffffff;
-
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    
-}
-
-.loadMoreBtn:hover,
-.loadMoreBtn:focus {
-    background-color: #380aa1;
+.button:focus,
+.buttonBack:hover,
+.buttonBack:focus {
+  background-color: #380aa1;
 }

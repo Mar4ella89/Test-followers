@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 
 import { fetchAllUsers, toggleFollow } from 'redux/users/user-operations';
 
@@ -14,6 +15,7 @@ import css from './TweetsPage.module.css';
 
 const TweetsPage = () => {
   const users = useSelector(({ users }) => users.items);
+  const navigate = useNavigate();
   const [displayedTweets, setDisplayedTweets] = useState(6);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -39,6 +41,14 @@ const TweetsPage = () => {
   return (
     <Container>
       <section className={css.section}>
+      <button
+        className={css.buttonBack}
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        Go back
+      </button>
         <ul className={css.list}>
           {users
             .slice(0, displayedTweets)
@@ -70,7 +80,7 @@ const TweetsPage = () => {
                 <button
                   type="button"
                   onClick={() => handleClick(id, followers)}
-                  className={css.button}
+                  className={css.buttonFollow}
                   style={{ backgroundColor: followStatus[id] ? '#5CD3A8' : '' }}
                 >
                   {followStatus[id] ? 'Following' : 'Follow'}
@@ -79,7 +89,7 @@ const TweetsPage = () => {
             ))}
         </ul>
         {displayedTweets < users.length && (
-          <button onClick={handleLoadMore} className={css.loadMoreBtn}>
+          <button onClick={handleLoadMore} className={css.button}>
             Load more
           </button>
         )}
