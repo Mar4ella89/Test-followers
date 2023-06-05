@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/test-followers/static/css/main.2ccfd609.css",
-    "main.js": "/test-followers/static/js/main.806b0174.js",
+    "main.js": "/test-followers/static/js/main.a40ab468.js",
     "static/css/110.42e8ae5b.chunk.css": "/test-followers/static/css/110.42e8ae5b.chunk.css",
     "static/js/110.95d9acb0.chunk.js": "/test-followers/static/js/110.95d9acb0.chunk.js",
     "static/js/680.3632ae84.chunk.js": "/test-followers/static/js/680.3632ae84.chunk.js",
     "static/js/504.54d1c8b3.chunk.js": "/test-followers/static/js/504.54d1c8b3.chunk.js",
-    "static/css/668.e835fa61.chunk.css": "/test-followers/static/css/668.e835fa61.chunk.css",
-    "static/js/668.28e352d6.chunk.js": "/test-followers/static/js/668.28e352d6.chunk.js",
+    "static/css/668.116fe1ac.chunk.css": "/test-followers/static/css/668.116fe1ac.chunk.css",
+    "static/js/668.8040c4ee.chunk.js": "/test-followers/static/js/668.8040c4ee.chunk.js",
     "static/media/picture2.png": "/test-followers/static/media/picture2.204c52a4d4fe08cebf94.png",
     "static/media/Hansel.png": "/test-followers/static/media/Hansel.7c9062b41b07d74bbcec.png",
     "index.html": "/test-followers/index.html",
     "main.2ccfd609.css.map": "/test-followers/static/css/main.2ccfd609.css.map",
-    "main.806b0174.js.map": "/test-followers/static/js/main.806b0174.js.map",
+    "main.a40ab468.js.map": "/test-followers/static/js/main.a40ab468.js.map",
     "110.42e8ae5b.chunk.css.map": "/test-followers/static/css/110.42e8ae5b.chunk.css.map",
     "110.95d9acb0.chunk.js.map": "/test-followers/static/js/110.95d9acb0.chunk.js.map",
     "680.3632ae84.chunk.js.map": "/test-followers/static/js/680.3632ae84.chunk.js.map",
     "504.54d1c8b3.chunk.js.map": "/test-followers/static/js/504.54d1c8b3.chunk.js.map",
-    "668.e835fa61.chunk.css.map": "/test-followers/static/css/668.e835fa61.chunk.css.map",
-    "668.28e352d6.chunk.js.map": "/test-followers/static/js/668.28e352d6.chunk.js.map"
+    "668.116fe1ac.chunk.css.map": "/test-followers/static/css/668.116fe1ac.chunk.css.map",
+    "668.8040c4ee.chunk.js.map": "/test-followers/static/js/668.8040c4ee.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2ccfd609.css",
-    "static/js/main.806b0174.js"
+    "static/js/main.a40ab468.js"
   ]
 }
