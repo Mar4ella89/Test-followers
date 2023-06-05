@@ -5,11 +5,11 @@ import {useNavigate} from 'react-router-dom';
 import { fetchAllUsers, toggleFollow } from 'redux/users/user-operations';
 
 import Container from 'components/Container/Container';
+import Loader from 'components/Loader/Loader';
 
 import GoitIcon from 'images/icons/GoitIcon';
 
 import defaultImage from '../../images/Hansel.png';
-// import defaultImage from '../../images/213.jpg';
 
 import css from './TweetsPage.module.css';
 
@@ -18,13 +18,12 @@ const TweetsPage = () => {
   const navigate = useNavigate();
   const [displayedTweets, setDisplayedTweets] = useState(6);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   const handleLoadMore = () => {
     setDisplayedTweets(displayedTweets + 6);
     setCurrentPage(currentPage + 1);
   };
-
-  console.log(users);
 
   const dispatch = useDispatch();
 
@@ -35,7 +34,9 @@ const TweetsPage = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
     dispatch(fetchAllUsers(currentPage));
+    setLoading(false);
   }, [dispatch, currentPage]);
 
   return (
@@ -49,6 +50,7 @@ const TweetsPage = () => {
       >
         Go back
       </button>
+      {loading && <Loader />}
         <ul className={css.list}>
           {users
             .slice(0, displayedTweets)
