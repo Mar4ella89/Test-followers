@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { fetchUsers } from 'services/user';
+import { fetchUsers, updateFollowers  } from 'services/user';
+// import { updateFollowStatus } from './user-slice';
 
 export const fetchAllUsers = createAsyncThunk(
   'users/fetch-all',
@@ -13,3 +14,17 @@ export const fetchAllUsers = createAsyncThunk(
     }
   }
 );
+
+export const toggleFollow = createAsyncThunk(
+    'users/toggle-follow',
+    async ({ id, followers }, thunkAPI) => {
+      try {
+        const isFollowing = followers > 0;
+        const updatedFollowers = isFollowing ? followers - 1 : followers + 1;
+        await updateFollowers(id, { followers: updatedFollowers });
+        return { id };
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error);
+      }
+    }
+  );
