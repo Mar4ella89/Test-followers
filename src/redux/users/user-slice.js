@@ -3,19 +3,17 @@ import { updateFollowers } from 'services/user';
 
 import { fetchAllUsers, toggleFollow } from './user-operations';
 
-
 const initialState = {
   items: [],
   loading: false,
   error: null,
   followStatus: {},
-  
 };
 
 const usersSlice = createSlice({
   name: 'users',
   initialState,
-  
+
   extraReducers: builder => {
     builder
       .addCase(fetchAllUsers.pending, store => {
@@ -34,15 +32,15 @@ const usersSlice = createSlice({
         if (userIndex !== -1) {
           const user = state.items[userIndex];
           if (state.followStatus[user.id]) {
-            user.followers--;
+            user.followers = user.followers - 1;
             delete state.followStatus[user.id];
           } else {
-            user.followers++;
+            user.followers = user.followers + 1;
             state.followStatus[user.id] = true;
           }
+          updateFollowers(user.id, { followers: user.followers });
         }
       });
-            
   },
 });
 

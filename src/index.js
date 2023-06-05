@@ -13,13 +13,13 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-    {/* <AuthLayout> */}
-    <BrowserRouter basename="/test-followers">
-      <App />
-    </BrowserRouter>
-    {/* </AuthLayout> */}
-    </PersistGate>
+      <PersistGate loading={null} persistor={persistor}>
+        {/* <AuthLayout> */}
+        <BrowserRouter basename="/test-followers">
+          <App />
+        </BrowserRouter>
+        {/* </AuthLayout> */}
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );

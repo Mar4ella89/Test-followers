@@ -1,10 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 
-import {
-  fetchAllUsers,
-  toggleFollow,
-} from 'redux/users/user-operations';
+import { fetchAllUsers, toggleFollow } from 'redux/users/user-operations';
 
 import Container from 'components/Container/Container';
 
@@ -23,7 +20,7 @@ const FollowersPage = () => {
 
   const dispatch = useDispatch();
 
-  const followStatus = useSelector(({ users }) => users.followStatus); // Get the follow status state
+  const followStatus = useSelector(({ users }) => users.followStatus);
 
   const handleClick = (id, followers) => {
     dispatch(toggleFollow({ id, followers }));
@@ -66,8 +63,9 @@ const FollowersPage = () => {
                 type="button"
                 onClick={() => handleClick(id, followers)}
                 className={css.button}
+                style={{ backgroundColor: followStatus[id] ? '#5CD3A8' : '' }}
               >
-                 {followStatus[id] ? 'Following' : 'Follow'}
+                {followStatus[id] ? 'Following' : 'Follow'}
               </button>
             </li>
           ))}
