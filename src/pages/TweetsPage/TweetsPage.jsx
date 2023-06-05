@@ -50,7 +50,7 @@ const TweetsPage = () => {
       >
         Go back
       </button>
-      {loading && <Loader />}
+      {loading ? <Loader /> :
         <ul className={css.list}>
           {users
             .slice(0, displayedTweets)
@@ -89,7 +89,7 @@ const TweetsPage = () => {
                 </button>
               </li>
             ))}
-        </ul>
+        </ul>}
         {displayedTweets < users.length && (
           <button onClick={handleLoadMore} className={css.button}>
             Load more
