@@ -29,3 +29,7 @@
 .navLink {
     color: #ffffff;
 }
+
+.navLink:global(.active) {
+    color: #8e88ed
+}

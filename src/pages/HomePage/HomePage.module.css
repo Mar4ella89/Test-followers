@@ -1,0 +1,23 @@
+.section {
+    
+    height: 100%;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+  }
+
+.img {
+    width: 100%;
+}
+
+.text {
+   
+    font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #9a969e;
+
+  text-align: center;
+  margin-top: 15px;
+}
