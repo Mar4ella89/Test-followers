@@ -12,9 +12,7 @@ const Navbar = () => {
       <NavLink to="/tweets" className={css.navLink}>
         Tweets
       </NavLink>
-      <NavLink to="/followers" className={css.navLink}>
-        Followers
-      </NavLink>
+      
     </div>
     </div>
     
