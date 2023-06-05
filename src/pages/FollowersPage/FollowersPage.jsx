@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { fetchAllUsers, toggleFollow } from 'redux/users/user-operations';
 
@@ -14,7 +14,6 @@ import css from './FollowersPage.module.css';
 
 const FollowersPage = () => {
   const users = useSelector(({ users }) => users.items);
-  const [updatedUsers, setUpdatedUsers] = useState([]);
 
   console.log(users);
 

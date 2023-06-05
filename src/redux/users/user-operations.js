@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { fetchUsers, updateFollowers } from 'services/user';
-// import { updateFollowStatus } from './user-slice';
 
 export const fetchAllUsers = createAsyncThunk(
   'users/fetch-all',
