@@ -40,6 +40,9 @@ The API functions are defined in the services/user.js module.
 Acknowledgements
 
 React
+
 Redux
+
 React Router
+
 Axios
