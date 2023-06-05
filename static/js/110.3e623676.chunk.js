@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktest_followers=self.webpackChunktest_followers||[]).push([[110],{3110:function(e,s,a){a.r(s),a.d(s,{default:function(){return i}});var r=a(1087),t="Navbar_wrapper__Z0AWg",n="Navbar_navList__eeiZ-",l="Navbar_navLink__il1WQ",c=a(3329),i=function(){return(0,c.jsx)("div",{className:t,children:(0,c.jsxs)("div",{className:n,children:[(0,c.jsx)(r.OL,{to:"/",className:l,children:"Home"}),(0,c.jsx)(r.OL,{to:"/tweets",className:l,children:"Tweets"})]})})}}}]);
+//# sourceMappingURL=110.3e623676.chunk.js.map
