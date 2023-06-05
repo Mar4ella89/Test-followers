@@ -1,5 +1,6 @@
 .section {
   padding-top: 15px;
+padding-bottom: 15px;
 }
 
 .list {
@@ -137,4 +138,34 @@
 .button:hover,
 .button:focus {
     background-color: #dbc0f7;
+}
+
+.loadMoreBtn {
+    display: block;
+    padding: 14px 28px;
+    width: 174px;
+    height: 50px;
+
+    background-color: #471ca9;
+    box-shadow: 0px 3.4px 3.4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.22;
+    text-transform: uppercase;
+    color: #dbc0f7;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    ;
+
+}
+
+.loadMoreBtn:hover,
+.loadMoreBtn:focus {
+    background-color: #380aa1;
 }

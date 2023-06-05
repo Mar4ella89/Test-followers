@@ -4,9 +4,9 @@ import { fetchUsers, updateFollowers } from 'services/user';
 
 export const fetchAllUsers = createAsyncThunk(
   'users/fetch-all',
-  async (_, thunkAPI) => {
+  async (page, thunkAPI) => {
     try {
-      const data = await fetchUsers();
+      const data = await fetchUsers(page);
       return data;
     } catch ({ response }) {
       return thunkAPI.rejectWithValue(response.data.message);
