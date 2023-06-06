@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 import { fetchAllUsers, toggleFollow } from 'redux/users/user-operations';
 
@@ -20,6 +22,10 @@ const TweetsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
+  const options = ['All followers', 'Follow', 'Following'];
+  const defaultOption = options[0];
+  const [selectedOption, setSelectedOption] = useState(defaultOption);
+
   const handleLoadMore = () => {
     setDisplayedTweets(displayedTweets + 6);
     setCurrentPage(currentPage + 1);
@@ -33,6 +39,25 @@ const TweetsPage = () => {
     dispatch(toggleFollow({ id, followers }));
   };
 
+  const getVisibleUsers = () => {
+    const visibleUsers = users.slice(0, displayedTweets);
+    switch (selectedOption) {
+      case 'Following':
+        return visibleUsers.filter(user => followStatus[user.id]);
+      case 'Follow':
+        return visibleUsers.filter(user => !followStatus[user.id]);
+      case 'All followers':
+      default:
+        return visibleUsers;
+    }
+  };
+
+  const allVisibleUsers = getVisibleUsers();
+
+  const handleDropdownChange = option => {
+    setSelectedOption(option.value);
+  };
+
   useEffect(() => {
     setLoading(true);
     dispatch(fetchAllUsers(currentPage));
@@ -42,19 +67,29 @@ const TweetsPage = () => {
   return (
     <Container>
       <section className={css.section}>
-      <button
-        className={css.buttonBack}
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        Go back
-      </button>
-      {loading ? <Loader /> :
-        <ul className={css.list}>
-          {users
-            .slice(0, displayedTweets)
-            .map(({ id, name, avatar, tweets, followers }) => (
+        <div className={css.control}>
+          <button
+            className={css.buttonBack}
+            onClick={() => {
+              navigate('/');
+            }}
+          >
+            Go back
+          </button>
+          <Dropdown
+            controlClassName={css.controlDropdown}
+            menuClassName={css.menuDropdown}
+            arrowClassName={css.arrowDropdown}
+            options={options}
+            value={selectedOption}
+            onChange={handleDropdownChange}
+          />
+        </div>
+        {loading ? (
+          <Loader />
+        ) : (
+          <ul className={css.list}>
+            {allVisibleUsers.map(({ id, name, avatar, tweets, followers }) => (
               <li key={id} className={css.item}>
                 <GoitIcon color={'#FFFFFF'} className={css.logo} />
                 <div className={css.middleLine}></div>
@@ -83,13 +118,16 @@ const TweetsPage = () => {
                   type="button"
                   onClick={() => handleClick(id, followers)}
                   className={css.buttonFollow}
-                  style={{ backgroundColor: followStatus[id] ? '#5CD3A8' : '' }}
+                  style={{
+                    backgroundColor: followStatus[id] ? '#5CD3A8' : '',
+                  }}
                 >
                   {followStatus[id] ? 'Following' : 'Follow'}
                 </button>
               </li>
             ))}
-        </ul>}
+          </ul>
+        )}
         {displayedTweets < users.length && (
           <button onClick={handleLoadMore} className={css.button}>
             Load more

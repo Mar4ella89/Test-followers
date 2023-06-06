@@ -170,3 +170,24 @@
 .buttonBack:focus {
   background-color: #380aa1;
 }
+
+.controlDropdown {
+  padding: 15px 52px 15px 10px;
+  box-shadow: 0px 3.4px 3.4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.menuDropdown {background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  }
+
+.arrowDropdown {
+  top: 22px;           
+    }
+
+.control {
+  display: flex;
+    }
+
